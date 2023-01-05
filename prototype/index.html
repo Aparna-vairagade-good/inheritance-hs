@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>INHERITANCE AND PROTOTYPE</h1> 
+    <h3>//Q1.Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h3> <br>
+    const parentObj = { <br>
+        calAge : function(){ <br>
+            console.log(`${this.fname} ${this.lname} ${this.age}`) <br>
+        } <br>
+    } <br>
+    
+const childObj = Object.create(parentObj); <br>
+    childObj.fname = "Albert"; <br>
+    childObj.lname = "Mathew"; <br>
+    childObj.age = 23; <br>
+    
+    childObj.calAge(); <br> <br>
+    
+output : <br>
+Albert Mathew 23
+
+<h3>//Q2Write code to explain prototype chaining.</h3> <br>
+class Person { <br>
+    constructor() { <br>
+      this.gender = 'female'; <br>
+    } <br>
+    printPerson() {} <br>
+  } <br>
+  class User extends Person { <br>
+    constructor() { <br>
+      super(); <br>
+      this.name = 'Aaisha'; <br>
+    } <br>
+    printUser() {} <br>
+  } <br>
+  var u = new User(); <br>
+  console.log(u); <br> <br>
+  Output : gender :"female" , name:"Aaisha"
+
+  <h3>//Q3.Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h3> <br>
+  const calSum= { <br>
+    sumArr:function(arr){ <br>
+      let sum=0; <br>
+      for(let i = 0; i < arr.length; i++){ <br>
+        sum+=arr[i] <br>
+      } <br>
+      console.log(sum); <br>
+    } <br>
+  } <br>
+  calSum.sumArr([1,2,3,4,5])  <br>
+  calSum.sumArr([6,7,8,9,10]) <br> <br>
+
+  Output : 15 <br>
+           40
+
+           <h3>//Q4.Write a JavaScript function to retrieve all the names of object's own and inherited properties..</h3> <br>
+           const user = { <br>
+            name: 'Alex', <br>
+            age: 30 <br>
+        } <br>
+        const prop = Object.getOwnPropertyNames(user) <br>
+
+        console.log(prop) // [ 'name', 'age' ] <br><br>
+
+        Output : [ 'name', 'age' ]
+
+    
+
+
+
+
+
+
+</body>
+</html>
